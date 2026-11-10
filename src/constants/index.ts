@@ -1,46 +1,37 @@
 import { TimeBlock } from '../types';
 
 export const COLORS = {
-  // Primary
-  primary: '#6C5CE7',
-  primaryLight: '#A29BFE',
-  primaryDark: '#5A4BD1',
+  // Midnight Black palette
+  bg: '#08090D',               // Deep Midnight Black
+  bgCard: '#11131A',           // Dark Charcoal Card
+  bgCardLight: '#181B24',      // Elevated Card
+  bgElevated: '#202430',       // Highlighted surface
+  border: '#1E222E',           // Subtle dark border
+  borderLight: '#2C3244',      // Light border
+
+  // Forest White & Neutral Text
+  textPrimary: '#F8FAFC',       // Crisp Forest White
+  textSecondary: '#94A3B8',     // Slate Secondary White
+  textMuted: '#64748B',         // Subtle Muted Slate
 
   // Accents
-  accent: '#00CEC9',
-  accentLight: '#81ECEC',
-  warning: '#FDCB6E',
-  warningDark: '#F39C12',
-  danger: '#FF7675',
-  dangerDark: '#D63031',
-  success: '#00B894',
-  successLight: '#55EFC4',
+  primary: '#10B981',          // Forest Emerald
+  primaryLight: '#34D399',     // Mint Emerald Light
+  primaryDark: '#059669',      // Deep Forest Green
+  accent: '#38BDF8',           // Sky Blue Accent
+  accentLight: '#7DD3FC',
 
-  // Neutrals
-  bg: '#0F0F1A',
-  bgCard: '#1A1A2E',
-  bgCardLight: '#242442',
-  bgElevated: '#2D2D4A',
-  textPrimary: '#FFFFFF',
-  textSecondary: '#B0B0CC',
-  textMuted: '#6C6C8A',
-  border: '#2A2A45',
-  borderLight: '#3A3A5A',
+  // Status colors
+  success: '#10B981',
+  successLight: '#6EE7B7',
+  warning: '#FBBF24',
+  danger: '#F87171',
 
-  // Phase colors
-  phaseFoundations: '#6C5CE7',
-  phaseCoreBackend: '#00CEC9',
-  phaseProduction: '#FDCB6E',
-  phaseInterview: '#FF7675',
-
-  // Task type colors
-  taskRead: '#74B9FF',
-  taskCode: '#55EFC4',
-  taskReview: '#FDCB6E',
-  taskDsa: '#FF7675',
-  taskProject: '#A29BFE',
-  taskJournal: '#FD79A8',
-  taskMock: '#E17055',
+  // Phase accents
+  phaseFoundations: '#10B981', // Forest Emerald
+  phaseCoreBackend: '#38BDF8', // Sky Cyan
+  phaseProduction: '#A78BFA',  // Violet
+  phaseInterview: '#F472B6',   // Rose
 };
 
 export const PHASE_COLORS: Record<string, string> = {
@@ -51,96 +42,96 @@ export const PHASE_COLORS: Record<string, string> = {
 };
 
 export const TASK_TYPE_COLORS: Record<string, string> = {
-  'read': COLORS.taskRead,
-  'code': COLORS.taskCode,
-  'review': COLORS.taskReview,
-  'dsa': COLORS.taskDsa,
-  'project': COLORS.taskProject,
-  'journal': COLORS.taskJournal,
-  'mock': COLORS.taskMock,
+  'read': '#38BDF8',    // Sky
+  'code': '#10B981',    // Emerald
+  'review': '#FBBF24',  // Amber
+  'dsa': '#F472B6',     // Rose
+  'project': '#A78BFA', // Violet
+  'journal': '#34D399', // Mint
+  'mock': '#FB923C',    // Orange
 };
 
 export const TASK_TYPE_LABELS: Record<string, string> = {
-  'read': '📖 Read',
-  'code': '💻 Code',
-  'review': '🔁 Review',
-  'dsa': '🧩 DSA',
-  'project': '🏗️ Project',
-  'journal': '📝 Journal',
-  'mock': '🎤 Mock',
+  'read': 'Reading',
+  'code': 'Coding',
+  'review': 'Review',
+  'dsa': 'DSA',
+  'project': 'Project',
+  'journal': 'Journal',
+  'mock': 'Mock',
 };
 
-// Daily time blocks (shared across all days)
+// Daily time blocks (10 Hours Total)
 export const TIME_BLOCKS: TimeBlock[] = [
   {
     id: 'morning-read',
-    time: '7:00 – 9:30',
+    time: '7:00 – 9:30 AM',
     startHour: 7, startMin: 0, endHour: 9, endMin: 30,
-    duration: '2.5 hr',
+    duration: '2.5h',
     title: 'Deep Read',
-    emoji: '🌅',
+    emoji: '📖',
     type: 'read',
-    description: 'New concept — theory + notes',
+    description: 'Master new backend concept theory & notes',
   },
   {
     id: 'morning-code',
-    time: '10:00 – 12:30',
+    time: '10:00 – 12:30 PM',
     startHour: 10, startMin: 0, endHour: 12, endMin: 30,
-    duration: '2.5 hr',
+    duration: '2.5h',
     title: 'Code Lab',
     emoji: '💻',
     type: 'code',
-    description: 'Implement what you just read',
+    description: 'Implement today\'s concept from first principles',
   },
   {
     id: 'afternoon-review',
-    time: '1:30 – 2:30',
+    time: '1:30 – 2:30 PM',
     startHour: 13, startMin: 30, endHour: 14, endMin: 30,
-    duration: '1 hr',
+    duration: '1.0h',
     title: 'Spaced Recall',
     emoji: '🔁',
     type: 'review',
-    description: "Yesterday's + older topics",
+    description: 'Revisit flashcards & explain concepts aloud',
   },
   {
     id: 'afternoon-read',
-    time: '2:30 – 4:30',
+    time: '2:30 – 4:30 PM',
     startHour: 14, startMin: 30, endHour: 16, endMin: 30,
-    duration: '2 hr',
+    duration: '2.0h',
     title: 'Deep Read #2',
     emoji: '🧠',
     type: 'read',
-    description: 'Second concept or continue morning topic',
+    description: 'Study second backend architecture topic',
   },
   {
     id: 'evening-dsa',
-    time: '5:00 – 5:45',
+    time: '5:00 – 5:45 PM',
     startHour: 17, startMin: 0, endHour: 17, endMin: 45,
-    duration: '45 min',
-    title: 'DSA Practice',
+    duration: '45m',
+    title: 'DSA Pattern Drill',
     emoji: '🧩',
     type: 'dsa',
-    description: 'Solve 3–4 problems',
+    description: 'Solve 3–4 targeted LeetCode pattern problems',
   },
   {
     id: 'evening-project',
-    time: '5:45 – 7:00',
+    time: '5:45 – 7:00 PM',
     startHour: 17, startMin: 45, endHour: 19, endMin: 0,
     duration: '1h 15m',
-    title: 'Build / Project',
+    title: 'Project Build',
     emoji: '🏗️',
     type: 'project',
-    description: 'Add features to your main project',
+    description: 'Ship features into your core portfolio project',
   },
   {
     id: 'evening-journal',
-    time: '7:00 – 7:30',
+    time: '7:00 – 7:30 PM',
     startHour: 19, startMin: 0, endHour: 19, endMin: 30,
-    duration: '30 min',
-    title: 'Journal',
+    duration: '30m',
+    title: 'Daily Journal',
     emoji: '📝',
     type: 'journal',
-    description: 'What I learned, what confused me, what to review',
+    description: 'Log takeaways, tricky points & review list',
   },
 ];
 
