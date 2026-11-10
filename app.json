@@ -25,6 +25,17 @@
     "plugins": [
       "expo-router",
       "expo-status-bar"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "b8f4865a-f6aa-4beb-b9f7-8d2715708ced"
+      }
+    },
+    "owner": "ashish-shah"
   }
 }
